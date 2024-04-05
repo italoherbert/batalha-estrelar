@@ -39,5 +39,7 @@ public interface Graph2D {
 	public void drawString( Graph graph, String str, int x, int y );
 	
 	public FontMetrics getFontMetrics( Graph graph, Font font );
+        
+        public void clipRect( Graph graph );
 	
 }

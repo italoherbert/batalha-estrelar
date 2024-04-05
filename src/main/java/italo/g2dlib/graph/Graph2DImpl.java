@@ -5,6 +5,7 @@ import italo.swingx.Graph;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.awt.Graphics;
 
 
 public class Graph2DImpl implements Graph2D {
@@ -71,6 +72,11 @@ public class Graph2DImpl implements Graph2D {
 
 	public FontMetrics getFontMetrics(Graph graph, Font font) {
 		return graph.getGraphics().getFontMetrics( font ); 
-	}	
+	}
+        
+        public void clipRect( Graph graph ) {
+            Graphics g = graph.getGraphics();
+            g.clipRect( 0, 0, graph.getComponent().getWidth()-1, graph.getComponent().getHeight()-1 );
+        }
 	
 }

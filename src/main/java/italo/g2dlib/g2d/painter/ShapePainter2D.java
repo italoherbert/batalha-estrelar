@@ -50,6 +50,8 @@ public class ShapePainter2D implements Painter {
 			this.paintEdges( g, s.getViewStruct2D().getEdges() );
 		if( s.isVertexesVisible() )
 			this.paintVertexes( g, s.getViewStruct2D().getVertexes() );
+                
+                graph2D.clipRect( g ); 
 		
 		if( s instanceof BaseShape2D ) {
 			((PainterBaseShape2D)s).getPainterBaseShape2DListener().beforeChildsPaint( (BaseShape2D)shape, graph2D, g, proj );
